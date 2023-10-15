@@ -1,11 +1,27 @@
-def rozkladanieNaCzynnikiPierwsze(x):
-    k = 2
-    while x >= 2:
-        while x % k == 0:
-            print(x)
-            x = int(x/k)
-        k += 1
-    print("1")
+import math
 
-i = int(input("Podaj liczbę: "))
-rozkladanieNaCzynnikiPierwsze(i)
+
+def czynnikiPierwsze(n):
+    czynniki = []
+
+    if n <= 1:
+        return
+
+    while n % 2 == 0:
+        czynniki.append(2)
+        n = n // 2
+
+    for i in range(3, int(math.sqrt(n)) + 1, 2):
+        while n % i == 0:
+            czynniki.append(i)
+            n = n // i
+
+    if n > 2:
+        czynniki.append(n)
+
+    return czynniki
+
+
+n = int(input("Podaj liczbę całkowitą: "))
+wynik = czynnikiPierwsze(n)
+print(wynik)
