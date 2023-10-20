@@ -35,8 +35,8 @@ def testPrimeFactors() -> None:
 
 
 def testInputLineInvalidInput(monkeypatch: MonkeyPatch) -> None:
-    user_input = "abc\n"
-    monkeypatch.setattr('builtins.input', lambda _: user_input)
+    userInput = "abc\n"
+    monkeypatch.setattr('builtins.input', lambda _: userInput)
     with pytest.raises(ValueError):
         inputLine()
 
