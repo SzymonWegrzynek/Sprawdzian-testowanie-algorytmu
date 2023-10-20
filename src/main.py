@@ -26,13 +26,13 @@ def primeFactors(n):
 
 def inputLine():
     n = int(input("Enter an integer: "))
-    result = primeFactors(n)
+    return n
 
 
-def printResult():
+def printResult(result):
     if result:
-        for factors in result:
-            print(factors)
+        for factor in result:
+            print(factor)
 
 
 def main():
