@@ -4,8 +4,10 @@ import math
 def primeFactors(n):
     factors = []
 
+    if n is None:
+        return []
     if n <= 1:
-        return
+        return []
 
     while n % 2 == 0:
         factors.append(2)
@@ -29,8 +31,8 @@ def inputLine():
 
 def printResult():
     if result:
-        for factor in result:
-            print(factor)
+        for factors in result:
+            print(factors)
 
 
 def main():
@@ -39,4 +41,5 @@ def main():
     printResult(result)
 
 
-main()
+if __name__ == "__main__":
+    main()
