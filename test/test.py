@@ -34,14 +34,14 @@ def testPrimeFactors() -> None:
     assert primeFactors(144) == [2, 2, 2, 2, 3, 3]
 
 
-def testInputLineInvalidInput(monkeypatch):
+def testInputLineInvalidInput(monkeypatch: MonkeyPatch) -> None:
     user_input = "abc\n"
     monkeypatch.setattr('builtins.input', lambda _: user_input)
     with pytest.raises(ValueError):
         inputLine()
 
 
-def testPrintResultEmptyList(capsys):
+def testPrintResultEmptyList(capsys: CaptureFixture) -> None:
     factors = []
     printResult(factors)
     captured = capsys.readouterr()
