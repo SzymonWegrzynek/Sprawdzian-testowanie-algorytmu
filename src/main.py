@@ -1,5 +1,6 @@
 import math
 
+
 def primeFactors(n):
     factors = []
 
@@ -21,7 +22,21 @@ def primeFactors(n):
     return factors
 
 
-if __name__ == "__main__":
+def inputLine():
     n = int(input("Enter an integer: "))
     result = primeFactors(n)
-    print(result)
+
+
+def printResult():
+    if result:
+        for factor in result:
+            print(factor)
+
+
+def main():
+    n = inputLine()
+    result = primeFactors(n)
+    printResult(result)
+
+
+main()
